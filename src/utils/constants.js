@@ -81,7 +81,7 @@ export const COUNTRIES = [
 ];
 
 // ── API Base URL ──
-export const API_BASE = '/api';
+export const API_BASE = "https://investment-bot-6nuk.onrender.com/api";
 
 // ── Navigation Items ──
 export const NAV_ITEMS = [
