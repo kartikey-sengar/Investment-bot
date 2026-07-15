@@ -1,0 +1,164 @@
+/* ═══════════════════════════════════════════════
+   FinPilot AI — Profile Setup (Premium)
+   ═══════════════════════════════════════════════ */
+
+.profile-setup-page {
+  padding-top: 32px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+.setup-header {
+  animation: fadeInDown 0.5s ease;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.setup-header .setup-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.15), rgba(124, 92, 252, 0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 28px;
+}
+
+/* ── Stepper ── */
+.setup-stepper {
+  margin-bottom: 40px !important;
+}
+
+.setup-stepper .MuiStepLabel-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.setup-stepper .MuiStepIcon-root.Mui-completed {
+  color: #10b981;
+}
+
+.setup-stepper .MuiStepIcon-root.Mui-active {
+  color: #4f8cff;
+}
+
+/* ── Form Container (Glassmorphic) ── */
+.setup-form-container {
+  background: var(--glass-bg, rgba(30, 39, 68, 0.6));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border, rgba(148, 163, 184, 0.08));
+  border-radius: var(--radius-lg, 16px);
+  padding: 48px;
+  animation: fadeInUp 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.step-content {
+  min-height: 300px;
+}
+
+.step-content .MuiTypography-h5 {
+  background: linear-gradient(45deg, #4f8cff, #7c5cfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ── Actions Bar ── */
+.setup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border, rgba(148, 163, 184, 0.1));
+}
+
+.setup-actions .MuiButton-contained {
+  padding: 10px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: none;
+  background: linear-gradient(135deg, #4f8cff, #7c5cfc);
+  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.setup-actions .MuiButton-contained:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(79, 140, 255, 0.4);
+}
+
+.setup-actions .MuiButton-outlined {
+  border-radius: 12px;
+  padding: 10px 24px;
+  text-transform: none;
+}
+
+/* ── Goal Rows ── */
+.goal-row {
+  padding: 20px;
+  background: var(--color-bg-secondary, rgba(15, 23, 42, 0.5));
+  border-radius: var(--radius-md, 12px);
+  margin-bottom: 12px;
+  border: 1px solid var(--color-border, rgba(148, 163, 184, 0.08));
+  transition: border-color 0.2s ease;
+}
+
+.goal-row:hover {
+  border-color: rgba(79, 140, 255, 0.3);
+}
+
+/* ── Risk Slider ── */
+.risk-slider-wrap {
+  padding: 40px 32px 16px;
+  background: var(--color-bg-secondary, rgba(15, 23, 42, 0.3));
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--color-border, rgba(148, 163, 184, 0.06));
+}
+
+.risk-description {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Asset Chips ── */
+.asset-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.asset-chips .MuiChip-root {
+  transition: transform 0.15s ease;
+  font-weight: 500;
+}
+
+.asset-chips .MuiChip-root:hover {
+  transform: scale(1.05);
+}
+
+/* ── Progress Indicator ── */
+.step-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: rgba(79, 140, 255, 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(79, 140, 255, 0.1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .setup-form-container {
+    padding: 24px 16px;
+  }
+  .setup-stepper .MuiStepLabel-label {
+    font-size: 0.6875rem;
+  }
+}

@@ -1,0 +1,174 @@
+/* ═══════════════════════════════════════════════
+   FinPilot AI — Modern Design System
+   Redesigned with Fresh Aesthetics & Better UX
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── New Dark Palette ── */
+  --color-bg-primary: #0a0e1f;
+  --color-bg-secondary: #141829;
+  --color-bg-card: #1a2035;
+  --color-bg-card-hover: #232d42;
+  --color-bg-elevated: #2a3550;
+  --color-bg-input: #141829;
+  --color-bg-overlay: rgba(10, 14, 31, 0.85);
+
+  /* ── Modern Accent Colors (Vibrant & Fresh) ── */
+  --color-accent-primary: #00d4ff;
+  --color-accent-secondary: #6366f1;
+  --color-accent-tertiary: #a855f7;
+  --color-accent-gradient: linear-gradient(135deg, #00d4ff 0%, #6366f1 50%, #a855f7 100%);
+  --color-accent-gradient-hover: linear-gradient(135deg, #06f9ff 0%, #818cf8 50%, #d8b4fe 100%);
+  --color-accent-glow: rgba(0, 212, 255, 0.25);
+
+  /* ── Modern Text Colors ── */
+  --color-text-primary: #e4e7ff;
+  --color-text-secondary: #b0b5d4;
+  --color-text-tertiary: #8891b8;
+  --color-text-muted: #697099;
+  --color-text-accent: #00d4ff;
+  --color-text-disabled: #556184;
+
+  /* ── Modern Border Colors ── */
+  --color-border: rgba(0, 212, 255, 0.08);
+  --color-border-hover: rgba(0, 212, 255, 0.15);
+  --color-border-accent: rgba(0, 212, 255, 0.25);
+  --color-border-strong: rgba(0, 212, 255, 0.12);
+
+  /* ── Modern Glassmorphism ── */
+  --glass-bg: rgba(26, 32, 53, 0.6);
+  --glass-border: rgba(0, 212, 255, 0.12);
+  --glass-blur: blur(25px);
+  --glass-shadow: 0 12px 48px rgba(0, 212, 255, 0.1);
+
+  /* ── Semantic Colors (Shared) ── */
+  --color-success: #10b981;
+  --color-success-light: #34d399;
+  --color-success-bg: rgba(16, 185, 129, 0.12);
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-danger: #ef4444;
+  --color-danger-light: #f87171;
+  --color-danger-bg: rgba(239, 68, 68, 0.12);
+  --color-info: #3b82f6;
+  --color-info-bg: rgba(59, 130, 246, 0.12);
+
+  /* ── Spacing Scale (Shared) ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* ── Border Radius (Shared) ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows (Shared) ── */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 24px rgba(59, 130, 246, 0.2);
+  --shadow-glow-secondary: 0 0 20px rgba(139, 92, 246, 0.15);
+
+  /* ── Typography (Shared) ── */
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Roboto Mono', 'Fira Code', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ── Transitions (Shared) ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Layout (Shared) ── */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 72px;
+  --navbar-height: 70px;
+  --max-content-width: 1400px;
+
+  /* ── Z-Index (Shared) ── */
+  --z-sidebar: 100;
+  --z-navbar: 200;
+  --z-modal: 300;
+  --z-tooltip: 400;
+
+  /* ── Score Colors (Shared) ── */
+  --score-excellent: #10b981;
+  --score-good: #22c55e;
+  --score-fair: #f59e0b;
+  --score-poor: #f97316;
+  --score-critical: #ef4444;
+}
+
+/* ═══════════════════════════════════════════════
+   LIGHT MODE
+   ═══════════════════════════════════════════════ */
+
+[data-theme="light"] {
+  /* ── Light Mode Palette (Modern) ── */
+  --color-bg-primary: #f5f7ff;
+  --color-bg-secondary: #eff2ff;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f8faff;
+  --color-bg-elevated: #f0f4ff;
+  --color-bg-input: #f8faff;
+  --color-bg-overlay: rgba(255, 255, 255, 0.95);
+
+  /* ── Light Mode Accent (Modern) ── */
+  --color-accent-primary: #0099e6;
+  --color-accent-secondary: #5e4ba8;
+  --color-accent-tertiary: #9333ea;
+  --color-accent-gradient: linear-gradient(135deg, #0099e6 0%, #5e4ba8 50%, #9333ea 100%);
+  --color-accent-gradient-hover: linear-gradient(135deg, #0088cc 0%, #4d3a96 50%, #7e22ce 100%);
+  --color-accent-glow: rgba(0, 153, 230, 0.2);
+
+  /* ── Light Mode Text ── */
+  --color-text-primary: #1a1f3a;
+  --color-text-secondary: #525766;
+  --color-text-tertiary: #7e8697;
+  --color-text-muted: #a4a9bb;
+  --color-text-accent: #0099e6;
+  --color-text-disabled: #cbd5e1;
+
+  /* ── Light Mode Borders ── */
+  --color-border: rgba(0, 153, 230, 0.1);
+  --color-border-hover: rgba(0, 153, 230, 0.18);
+  --color-border-accent: rgba(0, 153, 230, 0.25);
+  --color-border-strong: rgba(0, 153, 230, 0.15);
+
+  /* ── Light Mode Glassmorphism ── */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 153, 230, 0.15);
+  --glass-blur: blur(25px);
+  --glass-shadow: 0 8px 32px rgba(0, 153, 230, 0.08);
+}

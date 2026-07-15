@@ -1,0 +1,239 @@
+/* ═══════════════════════════════════════════════
+   FinPilot AI — Layout System
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --navbar-height: 70px;
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 80px;
+  --max-content-width: 1400px;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  transition: background-color var(--transition-base);
+}
+
+.app-layout--with-sidebar .app-main {
+  margin-left: var(--sidebar-width);
+  transition: margin-left var(--transition-smooth);
+}
+
+.app-layout--sidebar-collapsed .app-main {
+  margin-left: var(--sidebar-collapsed);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left var(--transition-smooth);
+  margin-top: var(--navbar-height);
+}
+
+.app-content {
+  flex: 1;
+  padding: 32px;
+  max-width: var(--max-content-width);
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-base);
+}
+
+/* ── Page Container ── */
+.page-container {
+  animation: slideInUp var(--transition-slow) ease;
+}
+
+.page-header {
+  margin-bottom: 40px;
+  animation: slideInUp var(--transition-base) ease;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.page-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.page-header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ── Section Grid ── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  animation: slideInUp var(--transition-slow) ease;
+}
+
+.dashboard-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dashboard-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dashboard-grid--full {
+  grid-template-columns: 1fr;
+}
+
+/* ── Card Container ── */
+.card-container {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-container:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* ── Featured Card ── */
+.card-featured {
+  background: var(--color-accent-gradient);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-glow);
+}
+
+.card-featured:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .dashboard-grid--3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    gap: 20px;
+  }
+
+  .dashboard-grid--2col {
+    grid-template-columns: 1fr;
+  }
+
+  .app-layout--with-sidebar .app-main {
+    margin-left: var(--sidebar-collapsed);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --navbar-height: 60px;
+  }
+
+  .app-main {
+    margin-top: var(--navbar-height);
+  }
+
+  .app-content {
+    padding: 16px;
+  }
+
+  .page-header {
+    margin-bottom: 24px;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .page-header h3 {
+    font-size: 1.125rem;
+  }
+
+  .dashboard-grid {
+    gap: 16px;
+  }
+
+  .card-container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-layout--with-sidebar .app-main {
+    margin-left: 0;
+  }
+
+  .app-content {
+    padding: var(--space-md);
+    padding-top: calc(var(--navbar-height) + var(--space-md));
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid--2col,
+  .dashboard-grid--3col {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .app-content {
+    padding: var(--space-sm);
+    padding-top: calc(var(--navbar-height) + var(--space-sm));
+  }
+}

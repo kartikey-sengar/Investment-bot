@@ -1,0 +1,123 @@
+.navbar {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--glass-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  transition: all var(--transition-base);
+}
+
+.navbar:hover {
+  border-bottom-color: var(--color-border-hover);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px !important;
+  padding: 0 32px !important;
+  gap: 20px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.navbar-title {
+  font-weight: 700 !important;
+  font-size: 1.375rem !important;
+  letter-spacing: -0.02em;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient {
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navbar-actions .MuiIconButton-root {
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.navbar-actions .MuiIconButton-root:hover {
+  color: var(--color-accent-primary);
+  background: var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+
+.navbar-greeting {
+  color: var(--color-text-secondary) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-actions .MuiAvatar-root {
+  transition: all var(--transition-fast);
+  border: 2px solid var(--color-accent-primary);
+  box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2);
+}
+
+.navbar-actions .MuiAvatar-root:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+@media (max-width: 768px) {
+  .navbar-toolbar {
+    padding: 0 16px !important;
+    min-height: 60px !important;
+  }
+  .navbar-greeting {
+    display: none;
+  }
+  .navbar-title {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-toolbar {
+    padding: 0 12px !important;
+  }
+  .navbar-actions {
+    gap: 8px;
+  }
+}
