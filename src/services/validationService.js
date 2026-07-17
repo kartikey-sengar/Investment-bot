@@ -10,11 +10,21 @@ export function validateProfileStep(step, data) {
       break;
 
     case 1: // Salary & Expenses
-      if (!data.monthlyIncome || data.monthlyIncome <= 0) errors.monthlyIncome = 'Income must be positive';
-      if (data.monthlyExpenses < 0) errors.monthlyExpenses = 'Expenses cannot be negative';
-      if (data.monthlyExpenses >= data.monthlyIncome) errors.monthlyExpenses = 'Expenses should be less than income';
-      if (data.debtEMI < 0) errors.debtEMI = 'EMI cannot be negative';
-      if (data.debtEMI > data.monthlyIncome * 0.5) errors.debtEMI = 'EMI exceeds 50% of income — very risky';
+      {
+        const monthlyIncome = Number(data.monthlyIncome);
+        const monthlyExpenses = Number(data.monthlyExpenses);
+        const debtEMI = Number(data.debtEMI);
+
+        if (!Number.isFinite(monthlyIncome) || monthlyIncome <= 0) errors.monthlyIncome = 'Income must be positive';
+        if (Number.isFinite(monthlyExpenses) && monthlyExpenses < 0) errors.monthlyExpenses = 'Expenses cannot be negative';
+        if (Number.isFinite(monthlyExpenses) && Number.isFinite(monthlyIncome) && monthlyExpenses >= monthlyIncome) {
+          errors.monthlyExpenses = 'Expenses should be less than income';
+        }
+        if (Number.isFinite(debtEMI) && debtEMI < 0) errors.debtEMI = 'EMI cannot be negative';
+        if (Number.isFinite(debtEMI) && Number.isFinite(monthlyIncome) && debtEMI > monthlyIncome * 0.5) {
+          errors.debtEMI = 'EMI exceeds 50% of income — very risky';
+        }
+      }
       break;
 
     case 2: // Savings & Investments
